@@ -1,0 +1,15 @@
+{
+  "name": "user-tracker",
+  "version": "1.0.0",
+  "description": "A node project that tracks the activity of user",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aditya Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.5.3"
+  }
+}
