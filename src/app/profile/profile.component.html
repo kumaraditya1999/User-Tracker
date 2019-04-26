@@ -1,3 +1,4 @@
-<p>
-  profile works!
-</p>
+<div *ngFor="let obj of urls">
+  <img (click)="onClick($event)" (mouseenter)="onHover($event)" src={{obj.url}} id={{obj.id}}>
+  <button id={{obj.id}} (click)="addToFavorite($event)">Add to favorite</button>
+</div>
