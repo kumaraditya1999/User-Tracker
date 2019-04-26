@@ -12,6 +12,11 @@ app.use(express.static(path.join(__dirname,'dist/User-Tracker')));
 app.use('', routes);
 
 
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'index.html'));
+})
+
+
 //server
 const port = 4200;
 
