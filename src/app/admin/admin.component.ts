@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../activity.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   public activities: any = [];
-  private id: string;
+  public id: string;
 
   constructor(private route: ActivatedRoute, private activityService: ActivityService) { }
 
@@ -30,6 +31,22 @@ export class AdminComponent implements OnInit {
           console.log(err);
         }
       );
+  }
+
+  deleteHistory() {
+
+    this.activityService.deleteHistory(this.id)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+
+      this.ngOnInit();
+
   }
 
 }

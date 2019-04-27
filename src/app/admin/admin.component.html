@@ -1,5 +1,58 @@
-<div *ngFor="let activity of activities">
+<!-- <div *ngFor="let activity of activities">
   <p> {{ activity.type }} </p>
   <p> {{ activity.timeStamp }}</p>
   <p> {{ activity.item }}</p>
+</div> -->
+    <div class="jumbotron text-center">
+      <h1> User : {{id}} </h1> 
+      <p>Have a look on what you did</p> 
+      <hr>
+      <div class="row text-center">
+        <div class="col col-md-6">
+          <a class="text-secondary" routerLink='/'><strong>Go Home</strong></a>
+        </div>
+      
+        <div class="col col-md-6">
+          <a class="text-secondary" routerLink='/{{id}}'><strong>Go to Profile</strong></a>
+        </div>
+      </div> 
+    </div>
+
+<div class="container">
+<div *ngIf="activities.length">
+    <div class="wrapper">
+        <button class="btn btn-dark" (click)="deleteHistory()">
+          <strong>delete history</strong>
+        </button>
+      </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Time</th>
+        <th scope="col">On Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activity of activities">
+        <th scope="row">{{ activity.type }}</th>
+        <td>{{ activity.timeStamp }}</td>
+        <td>{{ activity.item }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+
+
+
+<div *ngIf="!activities.length">
+    <div class="alert alert-warning text-center" role="alert">
+        <h4 class="alert-heading"><strong>OOPS!!!!</strong></h4>
+        <h5><strong>You don't have activity</strong></h5>
+        <hr>
+      </div>
+</div>
+</div>
+

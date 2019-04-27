@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
 var User = require('../models/user');
-var Activity = require('../models/activity');
 
 const router = express.Router();
 
 router.get('/info/:id',(req,res)=>{
-   console.log("here");
    console.log(req.params);
    User.findOne({"id" : req.params.id}).then(result=>{
       if(result){
@@ -18,8 +16,11 @@ router.get('/info/:id',(req,res)=>{
    });
 });
 
+let dep_url = '../../dist/User-Tracker/index.html';
+let url = "../../src/index.html,";
+
 router.get('*',(req,res)=>{
-   res.sendFile(path.join(__dirname,'../../dist/User-Tracker/index.html'));
+   res.sendFile(path.join(__dirname,dep_url));
 });
 
 router.post('/add',(req,res)=>{
@@ -62,6 +63,20 @@ router.post('/add',(req,res)=>{
             });
       }
 
+   });
+});
+
+router.delete('/:id',(req,res)=>{
+   console.log(req.params);
+
+   User.findOneAndUpdate({id:req.params.id},{activities:[]}).then((result,err)=>{
+      if(err){
+         console.log(err);
+         res.send({message: "deleted unsuccessfully"});
+      }else{
+         console.log(result);
+         res.send({message: "deleted unsuccessfully"});
+      }
    });
 });
 

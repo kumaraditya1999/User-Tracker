@@ -1,0 +1,25 @@
+.outter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.jumbotron{
+    background-color: rgba(224, 48, 48, 0.8);
+    color: aliceblue;
+    padding: 50px;
+    border-radius: 5px;
+}
+.inner{
+    position: relative;
+    left: -50%;
+    
+}
+
+a{
+    color: rgb(31, 24, 25);
+}
+
+small{
+    color: aliceblue;
+}

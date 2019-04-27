@@ -22,4 +22,8 @@ export class ActivityService {
     }));
   }
 
+  deleteHistory(id: string){
+    return this.http.delete(`/${id}`);
+  }
+
 }

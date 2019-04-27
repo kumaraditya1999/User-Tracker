@@ -8,8 +8,9 @@ const app = express();
 //connect to database
 
 const db_url = 'mongodb://user:user1234@ds147566.mlab.com:47566/user-tracker';
+const offline_db_url = 'mongodb://localhost/user-tracker';
 
-mongoose.connect(db_url).then(
+mongoose.connect(offline_db_url).then(
     ()=>{
         console.log('You are connected to data base');
     },

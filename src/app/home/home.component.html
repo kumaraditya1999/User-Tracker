@@ -1,1 +1,33 @@
-<button btn btn-primary>Hello</button>
+<div class="jumbotron text-center">
+    <h1>User Tracker</h1> 
+    <hr>
+    <p>Type your id in the input box or directly go through the url</p> 
+  </div>
+
+<div class="container">
+        
+    <form class="form">
+        <div class="row">
+            <div class="form-group">
+                <div class="row">
+                    <label for="user">Enter User Id</label>
+                    <input type="text" [(ngModel)]="route" class="form-control" id="user" placeholder="User id" name="userid" style="width: 50%">
+                    
+                    <small class="form-text text-muted">*Enter the id to go to the profile</small>
+                </div>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <strong><button class="btn btn-light" routerLink='/{{route}}'>Profile</button></strong>
+                </div>
+                <div class="col-sm-2">
+                    <strong><button class="btn btn-light" routerLink="/{{route}}/admin">Admin</button></strong>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</div>

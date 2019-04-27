@@ -1,0 +1,33 @@
+.jumbotron{
+    background-color: rgb(22, 19, 19);
+    color: aliceblue;
+    padding: 20px;
+}
+
+
+a{
+    color: aliceblue;
+}
+
+.alert-warning{
+    background-color: aliceblue;
+}
+
+.wrapper {
+    text-align: center;
+    padding: 5px auto;
+    margin: 5px auto;
+}
+
+button:hover{
+    background-color: red;
+    color: aliceblue;
+    transition-duration: 200ms;
+}
+
+.alert-warning{
+    
+    background-color: rgba(224, 48, 48, 0.8);
+    color: aliceblue;
+}
+

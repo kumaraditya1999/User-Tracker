@@ -13,8 +13,8 @@ export class ProfileComponent implements OnInit {
   urls: any = [];
   private ImageApi = 'https://picsum.photos';
   private Size = 400;
-  private N = 5;
-  private id: string;
+  private N = 6;
+  public id: string;
   constructor(private route: ActivatedRoute, private activityService: ActivityService) { }
 
   ngOnInit() {
@@ -54,6 +54,7 @@ export class ProfileComponent implements OnInit {
   }
 
   addToFavorite(event: any) {
+    console.log(event.target);
     const activity: any = new Activity('added to favorites', new Date(), event.target.id);
     this.add(activity, this.id);
   }

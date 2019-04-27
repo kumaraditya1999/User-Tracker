@@ -1,4 +1,44 @@
-<div *ngFor="let obj of urls">
+<!-- <div *ngFor="let obj of urls">
   <img (click)="onClick($event)" (mouseenter)="onHover($event)" src={{obj.url}} id={{obj.id}}>
   <button id={{obj.id}} (click)="addToFavorite($event)">Add to favorite</button>
+</div> -->
+
+<div class="jumbotron text-center">
+    <h1>Welcome {{id}} !!!</h1> 
+    <p>Your activities are being recorded</p>
+    <hr>
+    <div class="row text-center">
+      <div class="col col-md-6">
+        <a class="text-secondary" routerLink='/'><strong>Go Home</strong></a>
+      </div>
+    
+      <div class="col col-md-6">
+        <a class="text-secondary" routerLink='/{{id}}/admin'><strong>Check Activity</strong></a>
+      </div>
+    </div> 
+  </div>
+
+<div class="container">
+
+
+
+<div class="row">
+  <div *ngFor="let obj of urls"> 
+  
+    <div id="custom-card" class="col col-md-6">
+      <div class="card text-center">
+        <img class="card-img-bottom" alt="Card image cap" (click)="onClick($event)" (mouseenter)="onHover($event)" src={{obj.url}} id={{obj.id}}>
+        <div class="card-body">
+            <h3 class="card-title"><b>IMAGE {{ obj.id }}</b></h3>        
+            <strong><button class="btn btn-secondary" id={{obj.id}} (click)="addToFavorite($event)">Add to favorite</button></strong>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+</div>
+
+
+
