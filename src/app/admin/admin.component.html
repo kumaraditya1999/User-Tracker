@@ -1,3 +1,5 @@
-<p>
-  admin works!
-</p>
+<div *ngFor="let activity of activities">
+  <p> {{ activity.type }} </p>
+  <p> {{ activity.timeStamp }}</p>
+  <p> {{ activity.item }}</p>
+</div>
