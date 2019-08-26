@@ -2,7 +2,6 @@
 
 A simple project in NodeJs and Angular to track the activity of user.
 
-![Demo](https://github.com/kumaraditya1999/User-Tracker/blob/master/demo.gif)
 
 ## How to use project
 
